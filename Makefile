@@ -5,7 +5,7 @@ ifneq ("$(wildcard $(ENV_PATH))","")
 endif
 
 DOCKER_FILE=docker-compose.yml
-cnn="$(CONTAINER_PREFIX)_app" # Container name
+cnn=$(CONTAINER_PREFIX)_app # Container name
 c=DatabaseSeeder
 
 prepare-env:

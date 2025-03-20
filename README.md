@@ -33,5 +33,5 @@
     make setup
     ```
 
-Postman коллекция запросов:
-https://drive.google.com/file/d/1TqHUdMFRvWHf7sVm8gXwAeMgo7zLwqt8/view?usp=sharing
+#### Коллекция запросов для Postman:
+https://drive.google.com/file/d/1XfbD7jgloWgrtejL0ggL34vp9Nqumb2e/view?usp=sharing
