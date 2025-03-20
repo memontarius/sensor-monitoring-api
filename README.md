@@ -34,4 +34,4 @@
     ```
 
 Postman коллекция запросов:
-https://drive.google.com/file/d/1dZ0p6yceXtznE6ye1ZuSDE_gnb5-lUqX/view?usp=sharing
+https://drive.google.com/file/d/1TqHUdMFRvWHf7sVm8gXwAeMgo7zLwqt8/view?usp=sharing
