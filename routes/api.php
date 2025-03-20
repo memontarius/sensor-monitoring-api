@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [SensorEntryController::class, 'store'])
-    ->middleware('sensor.value.parsing');
+    ->middleware('sensor.value.parser');
 
 Route::get('/sensor-data', [SensorEntryController::class, 'index'])
-    ->middleware(['sensor.ids.parsing', 'sensor.types.parsing']);
+    ->middleware(['array.query.parser:sensors,types']);

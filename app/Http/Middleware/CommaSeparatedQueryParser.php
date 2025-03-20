@@ -6,26 +6,34 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-abstract class CommaSeparatedQueryParser
+/**
+ * Replaces comma separated query parameters to a query array
+ */
+class CommaSeparatedQueryParser
 {
-    public abstract function getParameterName(): string;
-
     /**
      * Handle an incoming request.
      *
      * @param \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, ...$parameterNames): Response
     {
-        $valueString = $request->get($this->getParameterName());
+        foreach ($parameterNames as $name) {
+            $this->parseParameter($request, $name);
+        }
+
+        return $next($request);
+    }
+
+    private function parseParameter(Request $request, string $name): void
+    {
+        $valueString = $request->get($name);
 
         if ($valueString) {
             $values = explode(',', $valueString);
             $request->merge([
-                $this->getParameterName() => $values
+                $name => $values
             ]);
         }
-
-        return $next($request);
     }
 }

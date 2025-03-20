@@ -15,9 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'sensor.value.parsing' => \App\Http\Middleware\SensorValueBodyParsing::class,
-            'sensor.ids.parsing' => \App\Http\Middleware\SensorIdsQueryParser::class,
-            'sensor.types.parsing' => \App\Http\Middleware\SensorTypesQueryParser::class
+            'sensor.value.parser' => \App\Http\Middleware\SensorValueBodyParsing::class,
+            'array.query.parser' => \App\Http\Middleware\CommaSeparatedQueryParser::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
