@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class SensorValueBodyParsing
+class SensorValueBodyParser
 {
     /**
      * Handle an incoming request.
